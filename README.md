@@ -1,6 +1,6 @@
 # Wizards
 
-* **Google Mock** - Generates a Google Mock object from exists object
+* **Google Mock** - Generates a Google Mock object from exists object. **Depends on python!**
 * **Google Test** - Creates a Google Test source file
 * **Qt Unit Test** - Creates a Qt Unit Test source file
 
