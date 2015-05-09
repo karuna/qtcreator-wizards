@@ -24,4 +24,4 @@ void %{TestName}::firstTest()
 }
 
 QTEST_APPLESS_MAIN(%{TestName})
-#include "%{JS: Cpp.classToFileName('tst_%{TestName}', 'moc')}"
+#include "%{JS: '%{SrcFileName}'.replace(/\..*/g, '.moc')}"
