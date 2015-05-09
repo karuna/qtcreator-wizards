@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wizard version="1" kind="class" id="E.GoogleMock" category="O.C++">
+    <description>Creates a Google Mock object</description>
+    <displayname>Google Mock</displayname>;
+    <displaycategory>C++ Classes</displaycategory>
+    <!-- Create parameter wizard page -->
+    <fieldpagetitle>Google Mock parameters</fieldpagetitle>
+    <fields>
+        <field mandatory="true" name="SourceObject">
+            <fieldcontrol class="Utils::PathChooser" defaulttext="" expectedkind="file"/>
+            <fielddescription>Source object header:</fielddescription>
+        </field>
+        <field name="ClassName">
+            <fieldcontrol class="QLineEdit" validator="^[a-zA-Z0-9_]+$" defaulttext="MyClassMock" placeholdertext="Enter a class name"/>
+            <fielddescription>Mock class name:</fielddescription>
+        </field>
+        <field name="OnlyVirtual">
+            <fieldcontrol class="QCheckBox" defaultvalue="true"/>
+            <fielddescription>Mocking only virtual methods</fielddescription>
+        </field>
+        <field name="Public">
+            <fieldcontrol class="QCheckBox" defaultvalue="true"/>
+            <fielddescription>Mocking public methods</fielddescription>
+        </field>
+        <field name="Protected">
+            <fieldcontrol class="QCheckBox" defaultvalue="false"/>
+            <fielddescription>Mocking protected methods</fielddescription>
+        </field>
+        <field name="Private">
+            <fieldcontrol class="QCheckBox" defaultvalue="false"/>
+            <fielddescription>Mocking private methods</fielddescription>
+        </field>
+    </fields>
+    <!-- Specify the generator script -->
+    <generatorscript binary="generate.py">
+        <argument value="--class-name=%ClassName%"/>
+        <argument value="--target-path=%TargetPath%"/>
+        <argument value="--source-object=%SourceObject%"/>
+        <argument value="--header-suffix=%CppHeaderSuffix%"/>
+        <argument value="--only-virtual=%OnlyVirtual%"/>
+        <argument value="--public=%Public%"/>
+        <argument value="--protected=%Protected%"/>
+        <argument value="--private=%Private%"/>
+    </generatorscript>
+</wizard>
