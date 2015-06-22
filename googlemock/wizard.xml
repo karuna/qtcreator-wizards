@@ -30,6 +30,10 @@
             <fieldcontrol class="QCheckBox" defaultvalue="false"/>
             <fielddescription>Mocking private methods</fielddescription>
         </field>
+        <field name="FasterBuild">
+            <fieldcontrol class="QCheckBox" defaultvalue="false"/>
+            <fielddescription>Making the Compilation Faster (constructor/destructor in .cpp).</fielddescription>
+        </field>
     </fields>
     <!-- Specify the generator script -->
     <generatorscript binary="generate.py">
@@ -37,9 +41,11 @@
         <argument value="--target-path=%TargetPath%"/>
         <argument value="--source-object=%SourceObject%"/>
         <argument value="--header-suffix=%CppHeaderSuffix%"/>
+        <argument value="--source-suffix=%CppSourceSuffix%"/>
         <argument value="--only-virtual=%OnlyVirtual%"/>
         <argument value="--public=%Public%"/>
         <argument value="--protected=%Protected%"/>
         <argument value="--private=%Private%"/>
+        <argument value="--faster-build=%FasterBuild%"/>
     </generatorscript>
 </wizard>
